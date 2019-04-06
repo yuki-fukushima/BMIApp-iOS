@@ -2,9 +2,9 @@ import UIKit
 
 public class PlaceHolderTextView: UITextView {
     
-    lazy var placeHolderLabel:UILabel = UILabel()
-    var placeHolderColor:UIColor = UIColor.lightGray
-    var placeHolder:NSString = ""
+    var placeHolderLabel: UILabel = UILabel()
+    var placeHolderColor: UIColor = UIColor.lightGray
+    var placeHolder: NSString = ""
     
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -21,17 +21,17 @@ public class PlaceHolderTextView: UITextView {
     
     // placeHolderを描画する
     override public func draw(_ rect: CGRect) {
-        if (self.placeHolder.length > 0) {
-            self.placeHolderLabel.frame = CGRect(x: 8, y: 8, width: self.bounds.size.width - 16 , height: 0)
-            self.placeHolderLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-            self.placeHolderLabel.numberOfLines = 0
-            self.placeHolderLabel.font = self.font
-            self.placeHolderLabel.backgroundColor = UIColor.clear
-            self.placeHolderLabel.textColor = self.placeHolderColor
-            self.placeHolderLabel.alpha = 0
-            self.placeHolderLabel.tag = 1
-            self.placeHolderLabel.text = self.placeHolder as String
-            self.placeHolderLabel.sizeToFit()
+        if (placeHolder.length > 0) {
+            placeHolderLabel.frame = CGRect(x: 8, y: 8, width: self.bounds.size.width - 16 , height: 0)
+            placeHolderLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            placeHolderLabel.numberOfLines = 0
+            placeHolderLabel.font = self.font
+            placeHolderLabel.backgroundColor = UIColor.clear
+            placeHolderLabel.textColor = self.placeHolderColor
+            placeHolderLabel.alpha = 0
+            placeHolderLabel.tag = 1
+            placeHolderLabel.text = self.placeHolder as String
+            placeHolderLabel.sizeToFit()
             self.addSubview(placeHolderLabel)
         }
         
@@ -46,7 +46,7 @@ public class PlaceHolderTextView: UITextView {
     
     // テキストが1文字以上入力されたらプレースホルダーを隠す
     @objc func textChanged(notification:NSNotification?) -> (Void) {
-        if (self.placeHolder.length == 0) {
+        if (placeHolder.length == 0) {
             return
         }
         

@@ -68,7 +68,7 @@ class InputViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     
     // キーボードが現れた時に画面全体をずらす。
     @objc func keyboardWillShow(notification: Notification?) {
-        if !isTappedTextField {
+        if isTappedTextField == false {
             let rect = (notification?.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
             let duration: TimeInterval? = notification?.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
             UIView.animate(withDuration: duration!, animations: { () in
@@ -80,7 +80,7 @@ class InputViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     
     // キーボードが消えたときに、画面を戻す
     @objc func keyboardWillHide(notification: Notification?) {
-        if !isTappedTextField {
+        if isTappedTextField == false {
             let duration: TimeInterval? = notification?.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Double
             UIView.animate(withDuration: duration!, animations: { () in
                 self.view.transform = CGAffineTransform.identity
