@@ -143,6 +143,9 @@
                                     <constraint firstAttribute="height" constant="40" id="tEs-Kp-NyY"/>
                                 </constraints>
                                 <state key="normal" title="削除"/>
+                                <connections>
+                                    <action selector="clear:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cKU-Ly-dEd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJH-Ha-JTJ">
                                 <rect key="frame" x="205" y="558" width="130" height="40"/>
@@ -151,6 +154,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="si6-Dv-Qbf"/>
                                 </constraints>
                                 <state key="normal" title="保存する"/>
+                                <connections>
+                                    <action selector="save:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Ufe-Xp-v3j"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ecq-DY-8XV" userLabel="Border">
                                 <rect key="frame" x="0.0" y="377" width="375" height="1"/>

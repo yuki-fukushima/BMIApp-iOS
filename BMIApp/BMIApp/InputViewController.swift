@@ -102,11 +102,40 @@ class InputViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     
     // 計算ボタンが押された時の処理
     @IBAction func calc(_ sender: Any) {
-        if let height = self.height.text,
-            let weight = self.weight.text {
-            self.BMI.text = String(CalculateLogic.calcBMI(height: Int(height) ?? 0, weight: Int(weight) ?? 0))
-            self.view.endEditing(true)
+        if let height = height.text,
+            let weight = weight.text {
+            // 値が未入力だったら処理しない
+            if height.isEmpty || weight.isEmpty {
+                return
+            }
+            BMI.text = String(CalculateLogic.calcBMI(height: Int(height) ?? 0, weight: Int(weight) ?? 0))
+            view.endEditing(true)
         }
+    }
+    // 保存ボタンが押された時の処理
+    @IBAction func save(_ sender: Any) {
+        if let bmi = BMI.text {
+            // 値が未入力だったら処理しない
+            if bmi.isEmpty {
+                return
+            }
+            let itemData = ItemData(month: "4月", day: "4日", height: "180cm", weight: "65kg", colum: "テスト")
+            var itemArray: Array<ItemData> = []
+            let itemArrayFromDB: Array<Any>? = AccessDataBase.findItemDataArray(key: "itemArray")
+            // DBにデータがあればそのデータにappendしてDBに登録
+            if let array = itemArrayFromDB as? Array<ItemData> {
+                itemArray = array
+            }
+            itemArray.append(itemData)
+            AccessDataBase.save(key: "itemArray", value: itemArray)
+        }
+    }
+    // 削除ボタンが押された時の処理
+    @IBAction func clear(_ sender: Any) {
+        height.text = ""
+        weight.text = ""
+        BMI.text = ""
+        memo.text = ""
     }
 }
 
