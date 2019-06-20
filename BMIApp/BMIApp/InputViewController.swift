@@ -114,12 +114,15 @@ class InputViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     }
     // 保存ボタンが押された時の処理
     @IBAction func save(_ sender: Any) {
-        if let bmi = BMI.text {
+        if let bmi = BMI.text,
+            let height = height.text,
+            let weight = weight.text,
+            let colum = memo.text {
             // 値が未入力だったら処理しない
             if bmi.isEmpty {
                 return
             }
-            let itemData = ItemData(month: "4月", day: "4日", height: "180cm", weight: "65kg", colum: "テスト")
+            let itemData = ItemData(month: getCurrentMonth(), day: getCurrentDay(), bmi: bmi, height: height, weight: weight, colum: colum)
             var itemArray: Array<ItemData> = []
             let itemArrayFromDB: Array<Any>? = AccessDataBase.findItemDataArray(key: "itemArray")
             // DBにデータがあればそのデータにappendしてDBに登録
@@ -137,5 +140,22 @@ class InputViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         BMI.text = ""
         memo.text = ""
     }
+    
+    // 現在の月を取得
+    func getCurrentMonth() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M月"
+        let now = Date()
+        return formatter.string(from: now)
+    }
+    
+    // 現在の日を取得
+    func getCurrentDay() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d日"
+        let now = Date()
+        return formatter.string(from: now)
+    }
+    
 }
 
