@@ -18,6 +18,8 @@
 		233C63D8220D882C00E19A43 /* history_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 233C63D6220D882C00E19A43 /* history_icon.png */; };
 		233C63D9220D882C00E19A43 /* input_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 233C63D7220D882C00E19A43 /* input_icon.png */; };
 		2344EC29221265D5002F15BB /* CalculateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344EC28221265D5002F15BB /* CalculateLogic.swift */; };
+		2346177322608DBA0082786C /* AccessDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346177122608DBA0082786C /* AccessDataBase.swift */; };
+		2346177422608DBA0082786C /* ItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346177222608DBA0082786C /* ItemData.swift */; };
 		234827272237770F00BFE6BA /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234827262237770F00BFE6BA /* PlaceHolderTextView.swift */; };
 		23B0FF6F22282ADF00BA08BE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0FF6E22282ADF00BA08BE /* CustomCell.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		233C63D6220D882C00E19A43 /* history_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history_icon.png; sourceTree = "<group>"; };
 		233C63D7220D882C00E19A43 /* input_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input_icon.png; sourceTree = "<group>"; };
 		2344EC28221265D5002F15BB /* CalculateLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateLogic.swift; sourceTree = "<group>"; };
+		2346177122608DBA0082786C /* AccessDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessDataBase.swift; sourceTree = "<group>"; };
+		2346177222608DBA0082786C /* ItemData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemData.swift; sourceTree = "<group>"; };
 		234827262237770F00BFE6BA /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		23B0FF6E22282ADF00BA08BE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +113,8 @@
 		233C63A4220D662400E19A43 /* BMIApp */ = {
 			isa = PBXGroup;
 			children = (
+				2346177122608DBA0082786C /* AccessDataBase.swift */,
+				2346177222608DBA0082786C /* ItemData.swift */,
 				233C63D5220D87A300E19A43 /* image */,
 				233C63A5220D662400E19A43 /* AppDelegate.swift */,
 				233C63A7220D662400E19A43 /* InputViewController.swift */,
@@ -286,8 +292,10 @@
 			files = (
 				233C63AA220D662400E19A43 /* HistoryViewController.swift in Sources */,
 				233C63A6220D662400E19A43 /* AppDelegate.swift in Sources */,
+				2346177422608DBA0082786C /* ItemData.swift in Sources */,
 				23B0FF6F22282ADF00BA08BE /* CustomCell.swift in Sources */,
 				234827272237770F00BFE6BA /* PlaceHolderTextView.swift in Sources */,
+				2346177322608DBA0082786C /* AccessDataBase.swift in Sources */,
 				233C63A8220D662400E19A43 /* InputViewController.swift in Sources */,
 				2344EC29221265D5002F15BB /* CalculateLogic.swift in Sources */,
 			);
